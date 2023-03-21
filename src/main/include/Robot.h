@@ -27,6 +27,25 @@
 // #include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot {
+
+  // Add XBOX 360/One Controller For Robot Drive & Functions
+  frc::XboxController m_driverController{0};
+
+  // Assign SparkMax ID's to Motor Positions
+  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3, armMotorDeviceID = 5;
+
+  // Setup motor types over the CAN for all motors.
+  // Left Side Motors...
+  rev::CANSparkMax m_leftLeadMotor{leftLeadDeviceID, rev::CANSparkMax::MotorType::kBrushless};
+  rev::CANSparkMax m_leftFollowMotor{leftFollowDeviceID, rev::CANSparkMax::MotorType::kBrushless};
+
+  // Right Side Motors...
+  rev::CANSparkMax m_rightLeadMotor{rightLeadDeviceID, rev::CANSparkMax::MotorType::kBrushless};
+  rev::CANSparkMax m_rightFollowMotor{rightFollowDeviceID, rev::CANSparkMax::MotorType::kBrushless};
+
+  // Set primary motors for Differential Drive (other motors will follow lead motors)
+  frc::DifferentialDrive m_robotDrive{m_leftLeadMotor, m_rightLeadMotor};
+
  public:
   void RobotInit() override;
   void RobotPeriodic() override;
