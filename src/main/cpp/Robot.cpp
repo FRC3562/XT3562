@@ -13,8 +13,8 @@
 //#include <frc/smartdashboard/SmartDashboard.h>
 
 void Robot::RobotInit() {
-  // Add XBOX 360/One Controller For Robot Drive & Functions
-  frc::XboxController m_driverController{0};
+
+
    
  // m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   //m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
