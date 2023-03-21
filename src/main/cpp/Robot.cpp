@@ -17,7 +17,7 @@ void Robot::RobotInit() {
   // of the tank drive system
   m_leftFollowMotor.Follow(m_leftLeadMotor);
   m_rightFollowMotor.Follow(m_rightLeadMotor);
-  
+
   // Invert right side motors 
   m_rightLeadMotor.SetInverted(true);
   m_rightFollowMotor.SetInverted(true);
@@ -71,12 +71,14 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopInit() {
-  // Tank Drive
+  // ?
 
 }
 
 void Robot::TeleopPeriodic() {
-  // code?
+  // Drive with tank style
+  m_robotDrive.TankDrive(-m_driverController.GetLeftY(),
+                         -m_driverController.GetRightY());
 }
 
 void Robot::DisabledInit() {}
