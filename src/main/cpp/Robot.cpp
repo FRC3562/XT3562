@@ -13,8 +13,14 @@
 //#include <frc/smartdashboard/SmartDashboard.h>
 
 void Robot::RobotInit() {
-
-
+  // Set up motor following for left and right sides 
+  // of the tank drive system
+  m_leftFollowMotor.Follow(m_leftLeadMotor);
+  m_rightFollowMotor.Follow(m_rightLeadMotor);
+  
+  // Invert right side motors 
+  m_rightLeadMotor.SetInverted(true);
+  m_rightFollowMotor.SetInverted(true);
    
  // m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
   //m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
