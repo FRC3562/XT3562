@@ -1,10 +1,15 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
+// Additional Copyrights (c)2023 Live Wire 3562 and RL Technologies LLC Code Teams
 
+// Include Main Robot File
 #include "Robot.h"
 
+// Include Core Functions
 #include <fmt/core.h>
+
+// Include Remote Dashboard Type
 #include <frc/smartdashboard/SmartDashboard.h>
 
 void Robot::RobotInit() {
@@ -55,9 +60,14 @@ void Robot::AutonomousPeriodic() {
   }
 }
 
-void Robot::TeleopInit() {}
+void Robot::TeleopInit() {
+  // Tank Drive
 
-void Robot::TeleopPeriodic() {}
+}
+
+void Robot::TeleopPeriodic() {
+  // code?
+}
 
 void Robot::DisabledInit() {}
 
