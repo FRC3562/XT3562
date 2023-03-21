@@ -2,12 +2,17 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
+// Only allow file to be called once!
 #pragma once
 
-#include <string>
+// Include string capabilities
+#include <string.h>
+
+// Include boolean capabilities
+#include <stdbool.h>
 
 #include <frc/TimedRobot.h>
-#include <frc/smartdashboard/SendableChooser.h>
+// #include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot {
  public:
@@ -24,9 +29,9 @@ class Robot : public frc::TimedRobot {
   void SimulationInit() override;
   void SimulationPeriodic() override;
 
- private:
-  frc::SendableChooser<std::string> m_chooser;
-  const std::string kAutoNameDefault = "Default";
-  const std::string kAutoNameCustom = "My Auto";
-  std::string m_autoSelected;
+//private:
+  //frc::SendableChooser<std::string> m_chooser;
+  //const std::string kAutoNameDefault = "Default";
+ // const std::string kAutoNameCustom = "XT3562";
+  //std::string m_autoSelected;
 };
