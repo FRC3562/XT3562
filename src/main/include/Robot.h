@@ -11,7 +11,19 @@
 // Include boolean capabilities
 #include <stdbool.h>
 
+// Set type of robot (timed or command)
 #include <frc/TimedRobot.h>
+
+// Add XBOX 360/One Controller 
+#include <frc/XboxController.h>
+
+// Add Differential Drive
+#include <frc/drive/DifferentialDrive.h>
+
+// Add Rev SparkMAX Motor Controller
+#include "rev/CANSparkMax.h"
+
+
 // #include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot {
