@@ -10,12 +10,21 @@
 #include <fmt/core.h>
 
 // Include Remote Dashboard Type
-#include <frc/smartdashboard/SmartDashboard.h>
+//#include <frc/smartdashboard/SmartDashboard.h>
 
 void Robot::RobotInit() {
-  m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
-  m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
-  frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
+  // Set up motor following for left and right sides 
+  // of the tank drive system
+  m_leftFollowMotor.Follow(m_leftLeadMotor);
+  m_rightFollowMotor.Follow(m_rightLeadMotor);
+
+  // Invert right side motors 
+  m_rightLeadMotor.SetInverted(true);
+  m_rightFollowMotor.SetInverted(true);
+   
+ // m_chooser.SetDefaultOption(kAutoNameDefault, kAutoNameDefault);
+  //m_chooser.AddOption(kAutoNameCustom, kAutoNameCustom);
+  //frc::SmartDashboard::PutData("Auto Modes", &m_chooser);
 }
 
 /**
@@ -40,33 +49,36 @@ void Robot::RobotPeriodic() {}
  * make sure to add them to the chooser code above as well.
  */
 void Robot::AutonomousInit() {
-  m_autoSelected = m_chooser.GetSelected();
+  //m_autoSelected = m_chooser.GetSelected();
   // m_autoSelected = SmartDashboard::GetString("Auto Selector",
   //     kAutoNameDefault);
-  fmt::print("Auto selected: {}\n", m_autoSelected);
+  //fmt::print("Auto selected: {}\n", m_autoSelected);
 
-  if (m_autoSelected == kAutoNameCustom) {
+  //if (m_autoSelected == kAutoNameCustom) {
     // Custom Auto goes here
-  } else {
+  //} else {
     // Default Auto goes here
-  }
+  //}
 }
 
 void Robot::AutonomousPeriodic() {
-  if (m_autoSelected == kAutoNameCustom) {
+
+  //if (m_autoSelected == kAutoNameCustom) {
     // Custom Auto goes here
-  } else {
+  //} else {
     // Default Auto goes here
-  }
+  //}
 }
 
 void Robot::TeleopInit() {
-  // Tank Drive
+  // ?
 
 }
 
 void Robot::TeleopPeriodic() {
-  // code?
+  // Drive with tank style
+  m_robotDrive.TankDrive(-m_driverController.GetLeftY(),
+                         -m_driverController.GetRightY());
 }
 
 void Robot::DisabledInit() {}
