@@ -23,8 +23,8 @@
 // Add Rev SparkMAX Motor Controller
 #include "rev/CANSparkMax.h"
 
-
-// #include <frc/smartdashboard/SendableChooser.h>
+#include <frc/smartdashboard/smartdashboard.h>
+#include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot {
 
