@@ -69,7 +69,7 @@ void Robot::AutonomousPeriodic() {
     // Default Auto goes here
   //}
 
-  m_robotDrive.TankDrive(0.2, 0.2);
+  m_robotDrive.TankDrive(0.5, 0.5);
 }
 
 void Robot::TeleopInit() {
