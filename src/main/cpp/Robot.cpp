@@ -69,6 +69,9 @@ void Robot::AutonomousPeriodic() {
     // Default Auto goes here
   //}
 
+  /**
+   * Main autonomous command for self drive
+  */
   m_robotDrive.TankDrive(0.5, 0.5);
 }
 
@@ -78,7 +81,10 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-  // Drive with tank style
+  /** 
+   * Drive with tank style using XBOX 360/One wired controller.
+   * Left stick controls left wheels - Right stick control right wheels
+   */
   m_robotDrive.TankDrive(-m_driverController.GetLeftY(),
                          -m_driverController.GetRightY());
 }
