@@ -15,6 +15,8 @@
 #include <frc/TimedRobot.h>
 
 // Add XBOX 360/One Controller and HID Joystick
+#include <frc2/command/button/CommandXboxController.h>
+
 #include <frc/XboxController.h>
 #include <frc/GenericHID.h>
 
