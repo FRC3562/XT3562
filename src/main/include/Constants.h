@@ -48,3 +48,13 @@ namespace ConstXbc {
     //Driver controller Port
     constexpr int DRIVER_CONTROLLER_PORT = 0;
 }
+
+// System Drivetrain (Tank Drive) Motors 
+namespace ConstDtm {
+
+}
+
+// System Front Arm 
+namespace ConstFa {
+    
+}
