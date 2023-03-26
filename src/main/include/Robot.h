@@ -43,7 +43,7 @@
 class Robot : public frc::TimedRobot {
 
   // Add XBOX 360/One Controller For Robot Drive & Functions
-  frc::XboxController xBoxControl{0};
+  frc::XboxController xBoxControl{ConstXbc::DRIVER_CONTROLLER_PORT};
   
   
   
