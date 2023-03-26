@@ -24,6 +24,11 @@
 #include "rev/CANSparkMax.h"
 #include <frc/motorcontrol/PWMSparkMax.h>
 
+// Add Camera Support - MS3000 WebCam
+
+// Add Gyro and Data Control Board
+
+// Add Shuffleboard and Plugins
 #include <frc/smartdashboard/smartdashboard.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
@@ -71,6 +76,6 @@ class Robot : public frc::TimedRobot {
 //private:
   //frc::SendableChooser<std::string> m_chooser;
   //const std::string kAutoNameDefault = "Default";
- // const std::string kAutoNameCustom = "XT3562";
+  const std::string kAutoNameCustom = "MENACE";
   //std::string m_autoSelected;
 };
