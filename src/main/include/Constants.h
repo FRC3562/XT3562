@@ -5,4 +5,13 @@
 // Only allow file to be called once!
 #pragma once
 
+// Include Units Mathmatical Functions
+#include <units/voltage.h>
+#include <units/math.h>
+
+// Include string capabilities
+#include <string.h>
+
+// Include boolean capabilities
+#include <stdbool.h>
 
