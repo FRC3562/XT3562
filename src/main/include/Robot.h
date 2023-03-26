@@ -16,7 +16,9 @@
 
 // Add XBOX 360/One Controller and HID Joystick
 #include <frc/XboxController.h>
-#include <frc/Joystick.h>
+#include <frc/GenericHID.h>
+
+//#include <frc2/command/button/JoystickButton.h>
 
 // Add Differential Drive
 #include <frc/drive/DifferentialDrive.h>
@@ -36,7 +38,12 @@
 class Robot : public frc::TimedRobot {
 
   // Add XBOX 360/One Controller For Robot Drive & Functions
-  frc::XboxController m_driverController{0};
+  frc::XboxController xBoxControl{0};
+  
+  
+  
+  //frc::GenericHID::Button armUp(frc::XboxController::Button::kX);
+  //static const button armUp = JoystickButton(m_driverController, 3);
 
   // Assign SparkMax ID's to Motor Positions
   // Spark CAN
