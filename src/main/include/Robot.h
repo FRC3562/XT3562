@@ -20,8 +20,9 @@
 // Add Differential Drive
 #include <frc/drive/DifferentialDrive.h>
 
-// Add Rev SparkMAX Motor Controller
+// Add Rev SparkMAX Motor Controller CAN/PWM
 #include "rev/CANSparkMax.h"
+#include <frc/motorcontrol/PWMSparkMax.h>
 
 #include <frc/smartdashboard/smartdashboard.h>
 #include <frc/smartdashboard/SendableChooser.h>
@@ -32,7 +33,11 @@ class Robot : public frc::TimedRobot {
   frc::XboxController m_driverController{0};
 
   // Assign SparkMax ID's to Motor Positions
-  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3, armMotorDeviceID = 5;
+  // Spark CAN
+  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3;
+
+  // Spark PWM
+  static const int armPwmChannel = 0;
 
   // Setup motor types over the CAN for all motors.
   // Left Side Motors...
@@ -45,6 +50,9 @@ class Robot : public frc::TimedRobot {
 
   // Set primary motors for Differential Drive (other motors will follow lead motors)
   frc::DifferentialDrive m_robotDrive{m_leftLeadMotor, m_rightLeadMotor};
+
+  // Set Motor for Front Arm Control
+  frc::PWMSparkMax m_arm{armPwmChannel};
 
  public:
   void RobotInit() override;
