@@ -14,8 +14,9 @@
 // Set type of robot (timed or command)
 #include <frc/TimedRobot.h>
 
-// Add XBOX 360/One Controller 
+// Add XBOX 360/One Controller and HID Joystick
 #include <frc/XboxController.h>
+#include <frc/Joystick.h>
 
 // Add Differential Drive
 #include <frc/drive/DifferentialDrive.h>
