@@ -72,7 +72,7 @@ void Robot::AutonomousPeriodic() {
   /**
    * Main autonomous command for self drive
   */
-  m_robotDrive.TankDrive(0.5, 0.5);
+  m_robotDrive.TankDrive(0.2, 0.2);
 }
 
 void Robot::TeleopInit() {
