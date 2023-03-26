@@ -1,0 +1,24 @@
+"filename", "language", "Java Properties", "Markdown", "JSON", "C++", "XML", "Gradle", "Batch", "comment", "blank", "total"
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/.gradle/7.5.1/dependencies-accessors/gc.properties", "Java Properties", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/.gradle/7.5.1/gc.properties", "Java Properties", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/.gradle/buildOutputCleanup/cache.properties", "Java Properties", 1, 0, 0, 0, 0, 0, 0, 1, 1, 3
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/.gradle/vcs-1/gc.properties", "Java Properties", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/.wpilib/wpilib_preferences.json", "JSON", 0, 0, 6, 0, 0, 0, 0, 0, 0, 6
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/2023 Software Archive/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/2023 Software Archive/REVLib-offline-v2023.1.3/maven/com/revrobotics/frc/REVLib-cpp/maven-metadata.xml", "XML", 0, 0, 0, 0, 13, 0, 0, 0, 1, 14
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/2023 Software Archive/REVLib-offline-v2023.1.3/maven/com/revrobotics/frc/REVLib-driver/maven-metadata.xml", "XML", 0, 0, 0, 0, 13, 0, 0, 0, 1, 14
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/2023 Software Archive/REVLib-offline-v2023.1.3/maven/com/revrobotics/frc/REVLib-java/maven-metadata.xml", "XML", 0, 0, 0, 0, 13, 0, 0, 0, 1, 14
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/2023 Software Archive/REVLib-offline-v2023.1.3/vendordeps/REVLib.json", "JSON", 0, 0, 73, 0, 0, 0, 0, 0, 1, 74
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/LICENSE.md", "Markdown", 0, 17, 0, 0, 0, 0, 0, 0, 4, 21
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/README.md", "Markdown", 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/WPILib-License.md", "Markdown", 0, 22, 0, 0, 0, 0, 0, 0, 3, 25
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/build.gradle", "Gradle", 0, 0, 0, 0, 0, 56, 0, 30, 14, 100
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/gradle/wrapper/gradle-wrapper.properties", "Java Properties", 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/gradlew.bat", "Batch", 0, 0, 0, 0, 0, 0, 70, 0, 22, 92
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/settings.gradle", "Gradle", 0, 0, 0, 0, 0, 26, 0, 0, 2, 28
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/src/main/cpp/Robot.cpp", "C++", 0, 0, 0, 31, 0, 0, 0, 55, 23, 109
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/src/main/include/Robot.h", "C++", 0, 0, 0, 31, 0, 0, 0, 21, 17, 69
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/src/test/cpp/main.cpp", "C++", 0, 0, 0, 8, 0, 0, 0, 0, 3, 11
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/vendordeps/REVLib.json", "JSON", 0, 0, 73, 0, 0, 0, 0, 0, 0, 73
+"/Volumes/eData/Projects - LiveWire Robotics/XT3562/vendordeps/WPILibNewCommands.json", "JSON", 0, 0, 37, 0, 0, 0, 0, 0, 1, 38
+"Total", "-", 6, 40, 189, 70, 39, 82, 70, 107, 100, 703
