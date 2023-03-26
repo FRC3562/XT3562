@@ -59,6 +59,12 @@ void Robot::AutonomousInit() {
   //} else {
     // Default Auto goes here
   //}
+
+  /**
+   * Main autonomous command for self drive
+   * numbers in () are drive speed settings
+  */
+  m_robotDrive.TankDrive(0.5, 0.5);
 }
 
 void Robot::AutonomousPeriodic() {
