@@ -3,5 +3,26 @@
         {
             "path": ".."
         }
-    ]
+    ],
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.cpptools",
+            "vizzuhq.code-viz-stat",
+            "uctakeoff.vscode-counter",
+            "mhutchie.git-graph",
+            "github.vscode-pull-request-github",
+            "quentinguidee.gitignore-ultimate",
+            "vscjava.vscode-gradle",
+            "redhat.java",
+            "bierner.markdown-emoji",
+            "bierner.markdown-preview-github-styles",
+            "pkief.material-icon-theme",
+            "vscjava.vscode-maven",
+            "vscjava.vscode-java-dependency",
+            "natqe.reload",
+            "vscjava.vscode-java-test",
+            "tzachovadia.todo-list",
+            "wpilibsuite.vscode-wpilib"
+        ]
+    }
 }
