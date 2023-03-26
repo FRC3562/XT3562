@@ -9,6 +9,9 @@
 // Include Core Functions
 #include <fmt/core.h>
 
+#include <frc2/command/button/JoystickButton.h>
+#include <frc2/command/button/Button.h>
+
 // Include Remote Dashboard Type
 //#include <frc/smartdashboard/SmartDashboard.h>
 
