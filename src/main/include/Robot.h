@@ -23,7 +23,6 @@
 // Add Rev SparkMAX Motor Controller
 #include "rev/CANSparkMax.h"
 
-// Add Smartdashboard and plugins
 #include <frc/smartdashboard/smartdashboard.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
