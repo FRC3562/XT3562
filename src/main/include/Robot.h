@@ -5,6 +5,9 @@
 // Only allow file to be called once!
 #pragma once
 
+// Include System Constants
+#include <Constants.h>
+
 // Include string capabilities
 #include <string.h>
 
