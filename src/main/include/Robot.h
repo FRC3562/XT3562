@@ -73,6 +73,8 @@ class Robot : public frc::TimedRobot {
   //frc::PWMSparkMax m_arm{armPwmChannel};
   rev::CANSparkMax m_arm{armPwmChannel, rev::CANSparkMax::MotorType::kBrushed};
 
+  // static const armmotor = m_arm.Set(0.6);
+
  public:
   void RobotInit() override;
   void RobotPeriodic() override;
