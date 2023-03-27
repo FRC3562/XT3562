@@ -11,6 +11,7 @@
 
 #include <frc2/command/button/JoystickButton.h>
 #include <frc2/command/button/Button.h>
+#include <frc/Joystick.h>
 
 // Include Remote Dashboard Type
 //#include <frc/smartdashboard/SmartDashboard.h>
@@ -92,7 +93,7 @@ void Robot::TeleopPeriodic() {
                          -xBoxControl.GetRightY());
   
   /** Control Arm with XBOX */
-  // frc2::Button([this] { return });
+  //frc2::Button([this] { return xBoxControl.GetRawButton(ConstXbc::LEFT_BUMPER); }).WhenPressed(m_arm(0.3));
 }
 
 void Robot::DisabledInit() {}
