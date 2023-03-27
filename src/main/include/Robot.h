@@ -52,10 +52,10 @@ class Robot : public frc::TimedRobot {
 
   // Assign SparkMax ID's to Motor Positions
   // Spark CAN
-  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3;
+  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3, armPwmChannel = 5;
 
   // Spark PWM
-  static const int armPwmChannel = 0;
+  //static const int armPwmChannel = 0;
 
   // Setup motor types over the CAN for all motors.
   // Left Side Motors...
@@ -70,8 +70,8 @@ class Robot : public frc::TimedRobot {
   frc::DifferentialDrive m_robotDrive{m_leftLeadMotor, m_rightLeadMotor};
 
   // Set Motor for Front Arm Control
-  frc::PWMSparkMax m_arm{armPwmChannel};
-  
+  //frc::PWMSparkMax m_arm{armPwmChannel};
+  rev::CANSparkMax m_arm{armPwmChannel, rev::CANSparkMax::MotorType::kBrushed};
 
  public:
   void RobotInit() override;
