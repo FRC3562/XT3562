@@ -71,6 +71,7 @@ class Robot : public frc::TimedRobot {
 
   // Set Motor for Front Arm Control
   frc::PWMSparkMax m_arm{armPwmChannel};
+  
 
  public:
   void RobotInit() override;
