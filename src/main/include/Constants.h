@@ -61,5 +61,9 @@ namespace ConstFa {
     constexpr int STOP = 0;
     constexpr float ARM_SPEED_FWD = 0.6;
     constexpr float ARM_SPEED_REV = -0.6;
+
+    // Set Limt Triggers Port ID
+    constexpr int LIMIT_UPPER = 1;
+    constexpr int LIMIT_LOWER = 3;
     
 }
