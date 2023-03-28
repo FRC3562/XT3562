@@ -103,15 +103,16 @@ void Robot::TeleopPeriodic() {
       m_arm.Set(ConstFa::ARM_SPEED_FWD);
   } else if (xBoxControl.GetRightTriggerAxis()) {
       m_arm.Set(ConstFa::ARM_SPEED_REV);
+      if (faUpper.Get()) {
+        m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
   } else {
       m_arm.Set(ConstFa::STOP);
   }
   // Limit Switches for above triggers
-  if (faUpper.Get()) {
-    m_arm.Set(ConstFa::STOP);
-  } else {
-    // Nothing
-  }
+  
 
 }
 
