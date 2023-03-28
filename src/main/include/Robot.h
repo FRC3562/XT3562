@@ -48,6 +48,7 @@ class Robot : public frc::TimedRobot {
   
   // Add Front Arm Limit Switches
   frc::DigitalInput faUpper{ConstFa::LIMIT_UPPER};
+  frc::DigitalInput faLower{ConstFa::LIMIT_LOWER};
 
   // Assign SparkMax ID's to Motor Positions
   // Spark CAN
