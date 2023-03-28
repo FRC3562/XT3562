@@ -5,6 +5,9 @@
 // Only allow file to be called once!
 #pragma once
 
+// Include System Constants
+#include <Constants.h>
+
 // Include string capabilities
 #include <string.h>
 
@@ -14,25 +17,42 @@
 // Set type of robot (timed or command)
 #include <frc/TimedRobot.h>
 
-// Add XBOX 360/One Controller 
+// Add XBOX 360/One Controller and HID Joystick
+//#include <frc2/command/button/CommandXboxController.h>
+
 #include <frc/XboxController.h>
+//#include <frc/GenericHID.h>
+
+//  Add Digital Controller
+#include <frc/DigitalInput.h>
 
 // Add Differential Drive
 #include <frc/drive/DifferentialDrive.h>
 
-// Add Rev SparkMAX Motor Controller
+// Add Rev SparkMAX Motor Controller CAN/PWM
 #include "rev/CANSparkMax.h"
+#include <frc/motorcontrol/PWMSparkMax.h>
 
+// Add Camera Support - MS3000 WebCam
+
+// Add Gyro and Data Control Board
+
+// Add Shuffleboard and Plugins
 #include <frc/smartdashboard/smartdashboard.h>
 #include <frc/smartdashboard/SendableChooser.h>
 
 class Robot : public frc::TimedRobot {
 
   // Add XBOX 360/One Controller For Robot Drive & Functions
-  frc::XboxController m_driverController{0};
+  frc::XboxController xBoxControl{ConstXbc::DRIVER_CONTROLLER_PORT};
+  
+  // Add Front Arm Limit Switches
+  frc::DigitalInput faUpper{ConstFa::LIMIT_UPPER};
+  frc::DigitalInput faLower{ConstFa::LIMIT_LOWER};
 
   // Assign SparkMax ID's to Motor Positions
-  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3, armMotorDeviceID = 5;
+  // Spark CAN
+  static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3, armPwmChannel = 5;
 
   // Setup motor types over the CAN for all motors.
   // Left Side Motors...
@@ -46,6 +66,10 @@ class Robot : public frc::TimedRobot {
   // Set primary motors for Differential Drive (other motors will follow lead motors)
   frc::DifferentialDrive m_robotDrive{m_leftLeadMotor, m_rightLeadMotor};
 
+  // Set Motor for Front Arm Control
+  rev::CANSparkMax m_arm{armPwmChannel, rev::CANSparkMax::MotorType::kBrushed};
+
+ // Setup Overrides for Robot.cpp
  public:
   void RobotInit() override;
   void RobotPeriodic() override;
@@ -63,6 +87,6 @@ class Robot : public frc::TimedRobot {
 //private:
   //frc::SendableChooser<std::string> m_chooser;
   //const std::string kAutoNameDefault = "Default";
- // const std::string kAutoNameCustom = "XT3562";
+  const std::string kAutoNameCustom = "MENACE";
   //std::string m_autoSelected;
 };

@@ -9,6 +9,10 @@
 // Include Core Functions
 #include <fmt/core.h>
 
+#include <frc2/command/button/JoystickButton.h>
+#include <frc2/command/button/Button.h>
+#include <frc/Joystick.h>
+
 // Include Remote Dashboard Type
 //#include <frc/smartdashboard/SmartDashboard.h>
 
@@ -73,6 +77,8 @@ void Robot::AutonomousPeriodic() {
    * Main autonomous command for self drive
   */
   m_robotDrive.TankDrive(0.2, 0.2);
+
+  //m_arm.Set(ConstFa::ARM_SPEED);
 }
 
 void Robot::TeleopInit() {
@@ -85,8 +91,34 @@ void Robot::TeleopPeriodic() {
    * Drive with tank style using XBOX 360/One wired controller.
    * Left stick controls left wheels - Right stick control right wheels
    */
-  m_robotDrive.TankDrive(-m_driverController.GetLeftY(),
-                         -m_driverController.GetRightY());
+  m_robotDrive.TankDrive(-xBoxControl.GetLeftY(),
+                         -xBoxControl.GetRightY());
+  
+  /** Control Front Arm with XBOX 
+   * Left XBOX Trigger Moves Arm Forward (Down)
+   * Right XBOX Trigger Moves Arm Reverse (Up)
+   */
+  // Triggr Controls
+  if (xBoxControl.GetLeftTriggerAxis()) {
+      m_arm.Set(ConstFa::ARM_SPEED_FWD);
+      if (faLower.Get()) {
+        m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
+  } else if (xBoxControl.GetRightTriggerAxis()) {
+      m_arm.Set(ConstFa::ARM_SPEED_REV);
+      if (faUpper.Get()) {
+        m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
+  } else {
+      m_arm.Set(ConstFa::STOP);
+  }
+  // Limit Switches for above triggers
+  
+
 }
 
 void Robot::DisabledInit() {}
