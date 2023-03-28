@@ -78,7 +78,7 @@ void Robot::AutonomousPeriodic() {
   */
   m_robotDrive.TankDrive(0.2, 0.2);
 
-  m_arm.Set(0.6);
+  m_arm.Set(ConstFa::ARM_SPEED);
 }
 
 void Robot::TeleopInit() {
