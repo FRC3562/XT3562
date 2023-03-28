@@ -46,7 +46,8 @@ class Robot : public frc::TimedRobot {
   // Add XBOX 360/One Controller For Robot Drive & Functions
   frc::XboxController xBoxControl{ConstXbc::DRIVER_CONTROLLER_PORT};
   
-
+  // Add Front Arm Limit Switches
+  frc::DigitalInput faUpper{ConstFa::LIMIT_UPPER};
 
   // Assign SparkMax ID's to Motor Positions
   // Spark CAN
