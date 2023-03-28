@@ -56,5 +56,10 @@ namespace ConstDtm {
 
 // System Front Arm 
 namespace ConstFa {
+
+    // Set Arm Motor Speed
+    constexpr int STOP = 0;
+    constexpr float ARM_SPEED_FWD = 0.6;
+    constexpr float ARM_SPEED_REV = -0.6;
     
 }
