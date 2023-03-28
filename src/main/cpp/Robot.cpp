@@ -98,13 +98,27 @@ void Robot::TeleopPeriodic() {
    * Left XBOX Trigger Moves Arm Forward (Down)
    * Right XBOX Trigger Moves Arm Reverse (Up)
    */
+  // Triggr Controls
   if (xBoxControl.GetLeftTriggerAxis()) {
       m_arm.Set(ConstFa::ARM_SPEED_FWD);
+      if (faLower.Get()) {
+        m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
   } else if (xBoxControl.GetRightTriggerAxis()) {
       m_arm.Set(ConstFa::ARM_SPEED_REV);
+      if (faUpper.Get()) {
+        m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
   } else {
       m_arm.Set(ConstFa::STOP);
   }
+  // Limit Switches for above triggers
+  
+
 }
 
 void Robot::DisabledInit() {}

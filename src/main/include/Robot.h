@@ -18,12 +18,13 @@
 #include <frc/TimedRobot.h>
 
 // Add XBOX 360/One Controller and HID Joystick
-#include <frc2/command/button/CommandXboxController.h>
+//#include <frc2/command/button/CommandXboxController.h>
 
 #include <frc/XboxController.h>
-#include <frc/GenericHID.h>
+//#include <frc/GenericHID.h>
 
-//#include <frc2/command/button/JoystickButton.h>
+//  Add Digital Controller
+#include <frc/DigitalInput.h>
 
 // Add Differential Drive
 #include <frc/drive/DifferentialDrive.h>
@@ -45,17 +46,13 @@ class Robot : public frc::TimedRobot {
   // Add XBOX 360/One Controller For Robot Drive & Functions
   frc::XboxController xBoxControl{ConstXbc::DRIVER_CONTROLLER_PORT};
   
-  
-  
-  //frc::GenericHID::Button armUp(frc::XboxController::Button::kX);
-  //static const button armUp = JoystickButton(m_driverController, 3);
+  // Add Front Arm Limit Switches
+  frc::DigitalInput faUpper{ConstFa::LIMIT_UPPER};
+  frc::DigitalInput faLower{ConstFa::LIMIT_LOWER};
 
   // Assign SparkMax ID's to Motor Positions
   // Spark CAN
   static const int leftLeadDeviceID = 2, leftFollowDeviceID = 4, rightLeadDeviceID = 1, rightFollowDeviceID = 3, armPwmChannel = 5;
-
-  // Spark PWM
-  //static const int armPwmChannel = 0;
 
   // Setup motor types over the CAN for all motors.
   // Left Side Motors...
@@ -70,11 +67,9 @@ class Robot : public frc::TimedRobot {
   frc::DifferentialDrive m_robotDrive{m_leftLeadMotor, m_rightLeadMotor};
 
   // Set Motor for Front Arm Control
-  //frc::PWMSparkMax m_arm{armPwmChannel};
   rev::CANSparkMax m_arm{armPwmChannel, rev::CANSparkMax::MotorType::kBrushed};
 
- // armmotor = m_arm.Set(0.6);
-
+ // Setup Overrides for Robot.cpp
  public:
   void RobotInit() override;
   void RobotPeriodic() override;
