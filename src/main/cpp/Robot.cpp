@@ -99,8 +99,10 @@ void Robot::TeleopPeriodic() {
   /** Control Arm with XBOX */
   //frc2::Button([this] { return xBoxControl.GetRawButton(ConstXbc::LEFT_BUMPER); }).WhenHeld();
 
-  if (xBoxControl.GetAButtonPressed()) {
-      m_arm.Set(ConstFa::ARM_SPEED);
+  if (xBoxControl.GetLeftTriggerAxis()) {
+      m_arm.Set(ConstFa::ARM_SPEED_FWD);
+  } else if (xBoxControl.GetRightTriggerAxis()) {
+      m_arm.Set(ConstFa::ARM_SPEED_REV);
   } else {
       m_arm.Set(ConstFa::STOP);
   }
