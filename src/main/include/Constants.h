@@ -58,7 +58,7 @@ namespace ConstDtm {
 namespace ConstFa {
 
     // Set Arm Motor Speed
+    constexpr int STOP = 0;
     constexpr float ARM_SPEED = 0.6;
-
     
 }
