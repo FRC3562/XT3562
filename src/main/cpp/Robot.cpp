@@ -87,8 +87,6 @@ void Robot::TeleopInit() {
 }
 
 void Robot::TeleopPeriodic() {
-
-
   /** 
    * Drive with tank style using XBOX 360/One wired controller.
    * Left stick controls left wheels - Right stick control right wheels
@@ -96,9 +94,10 @@ void Robot::TeleopPeriodic() {
   m_robotDrive.TankDrive(-xBoxControl.GetLeftY(),
                          -xBoxControl.GetRightY());
   
-  /** Control Arm with XBOX */
-  //frc2::Button([this] { return xBoxControl.GetRawButton(ConstXbc::LEFT_BUMPER); }).WhenHeld();
-
+  /** Control Front Arm with XBOX 
+   * Left XBOX Trigger Moves Arm Forward (Down)
+   * Right XBOX Trigger Moves Arm Reverse (Up)
+   */
   if (xBoxControl.GetLeftTriggerAxis()) {
       m_arm.Set(ConstFa::ARM_SPEED_FWD);
   } else if (xBoxControl.GetRightTriggerAxis()) {
