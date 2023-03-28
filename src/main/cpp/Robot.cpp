@@ -101,6 +101,11 @@ void Robot::TeleopPeriodic() {
   // Triggr Controls
   if (xBoxControl.GetLeftTriggerAxis()) {
       m_arm.Set(ConstFa::ARM_SPEED_FWD);
+      if (faLower.Get()) {
+        m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
   } else if (xBoxControl.GetRightTriggerAxis()) {
       m_arm.Set(ConstFa::ARM_SPEED_REV);
       if (faUpper.Get()) {
