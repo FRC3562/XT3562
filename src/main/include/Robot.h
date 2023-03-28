@@ -23,7 +23,8 @@
 #include <frc/XboxController.h>
 #include <frc/GenericHID.h>
 
-//#include <frc2/command/button/JoystickButton.h>
+//  Add Digital Controller
+#include <frc/DigitalInput.h>
 
 // Add Differential Drive
 #include <frc/drive/DifferentialDrive.h>
