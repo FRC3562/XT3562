@@ -1,4 +1,4 @@
-# XT3562
+# XT3562 - 'Menace'
 
 ## FRC Team LiveWire 3562 XBOX Controller Based Tank Drive Robot for the 2023 FRC "Charged Up" Competition
 
