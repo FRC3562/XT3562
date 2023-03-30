@@ -51,7 +51,7 @@ namespace ConstXbc {
 
 // System Drivetrain (Tank Drive) Motors 
 namespace ConstDtm {
-
+    constexpr int ATIME = 3;
 }
 
 // System Front Arm 

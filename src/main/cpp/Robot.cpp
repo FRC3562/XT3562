@@ -76,9 +76,14 @@ void Robot::AutonomousPeriodic() {
   /**
    * Main autonomous command for self drive
   */
-  m_robotDrive.TankDrive(0.2, 0.2);
-
-  //m_arm.Set(ConstFa::ARM_SPEED);
+  auto now = std::chrono::steady_clock::now;
+    using namespace std::chrono_literals;
+    auto work_duration = 2.9s;
+    auto start = now();
+    while ( (now() - start) < work_duration)
+    {
+      m_robotDrive.TankDrive(0.6, 0.6);
+    };
 }
 
 void Robot::TeleopInit() {
