@@ -78,14 +78,20 @@ void Robot::AutonomousPeriodic() {
   */
     auto now = std::chrono::steady_clock::now;
     using namespace std::chrono_literals;
-    auto work_duration = 1.2s;
+    auto work_duration = 1.5s;
     auto start = now();
     while ( (now() - start) < work_duration)
     {
-      m_robotDrive.TankDrive(0.6, 0.6);
+      m_robotDrive.TankDrive(0.2, 0.2);
     };
     while ( (now() - start) > work_duration)
     {
+      m_arm.Set(ConstFa::ARM_SPEED_FWD);
+      if (faLower.Get()) {
+        //m_arm.Set(ConstFa::STOP);
+      } else {
+        // Do Nothing
+      }
       m_robotDrive.TankDrive(0, 0);
     };
    
