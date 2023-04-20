@@ -63,6 +63,37 @@ void Robot::AutonomousInit() {
   //} else {
     // Default Auto goes here
   //}
+
+  /**
+   * Main autonomous command for self drive
+  */
+    auto now = std::chrono::steady_clock::now;
+    using namespace std::chrono_literals;
+    auto fwd_work_duration = 1.5s;
+    auto stop_work_duration = 2s;
+    auto rev_work_duration = 10s;
+    auto start = now();
+    while ( (now() - start) < fwd_work_duration)
+    {
+      m_robotDrive.TankDrive(0.3, 0.3);
+    };
+    while ( (now() - start) > fwd_work_duration)
+    {
+      m_arm.Set(ConstFa::ARM_SPEED_FWD);
+      //m_robotDrive.TankDrive(0, 0);
+      if (faLower.Get()) {
+        m_arm.Set(ConstFa::STOP);
+        //m_robotDrive.TankDrive(0, 0);
+        break;
+      } else {
+        // Do Nothing
+      }
+      
+     m_robotDrive.StopMotor();
+
+
+     //m_robotDrive.TankDrive(-0.6, -0.6);
+  };
 }
 
 void Robot::AutonomousPeriodic() {
@@ -72,28 +103,6 @@ void Robot::AutonomousPeriodic() {
   //} else {
     // Default Auto goes here
   //}
-
-  /**
-   * Main autonomous command for self drive
-  */
-    auto now = std::chrono::steady_clock::now;
-    using namespace std::chrono_literals;
-    auto work_duration = 1.5s;
-    auto start = now();
-    while ( (now() - start) < work_duration)
-    {
-      m_robotDrive.TankDrive(0.2, 0.2);
-    };
-    while ( (now() - start) > work_duration)
-    {
-      m_arm.Set(ConstFa::ARM_SPEED_FWD);
-      if (faLower.Get()) {
-        //m_arm.Set(ConstFa::STOP);
-      } else {
-        // Do Nothing
-      }
-      m_robotDrive.TankDrive(0, 0);
-    };
    
 }
 
